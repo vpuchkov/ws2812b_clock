@@ -1,10 +1,10 @@
 // служебные функции
 
 // функция отрисовки точки по координатам X Y
-void drawPixelXY(int8_t x, int8_t y, byte color, byte saturation, byte ) {
+void drawPixelXY(int8_t x, int8_t y, byte color, byte saturation, byte vol) {
   if (x < 0 || x > WIDTH - 1 || y < 0 || y > HEIGHT - 1) return;
   int thisPixel = getPixelNumber(x, y);
-  leds[thisPixel] = CHSV(color, saturation, BRIGHTNESS);
+  leds[thisPixel] = CHSV(color, saturation, vol);
 }
 
 // **************** НАСТРОЙКА МАТРИЦЫ ****************
