@@ -31,7 +31,7 @@
 #include <FastLED.h>
 //#include "fonts.h"
 
-byte num[11][5]={{B01111111,B01000001,B01000001,B01000001,B01111111}, //0
+byte numbig[11][5]={{B01111111,B01000001,B01000001,B01000001,B01111111}, //0
                  {B00100001,B00100001,B01111111,B00000001,B00000001}, //1
                  {B01001111,B01001001,B01001001,B01001001,B01111001}, //2
                  {B01001001,B01001001,B01001001,B01001001,B01111111}, //3
@@ -41,6 +41,19 @@ byte num[11][5]={{B01111111,B01000001,B01000001,B01000001,B01111111}, //0
                  {B01000000,B01000000,B01000000,B01000000,B01111111}, //7
                  {B01111111,B01001001,B01001001,B01001001,B01111111}, //8
                  {B01111001,B01001001,B01001001,B01001001,B01111111}, //9
+                 {B00010100},// двоеточие
+      };
+
+byte numsmall[11][3]={{B00111110,B00100010,B00111110}, //0
+                 {B00010010,B00111110,B00000010}, //1
+                 {B00101110,B00101010,B00111010}, //2
+                 {B00101010,B00101010,B00111110}, //3
+                 {B00111000,B00001000,B00111110}, //4
+                 {B00111010,B00101010,B00101110}, //5
+                 {B00111110,B00101010,B00101110}, //6
+                 {B00100000,B00100000,B00111110}, //7
+                 {B00111110,B00101010,B00111110}, //8
+                 {B00111010,B00101010,B00111110}, //9
                  {B00010100},// двоеточие
       };
 
@@ -63,10 +76,10 @@ void loop() {
 //1
   for (int xi=0; xi<5;xi++) {
     for (int yj=0; yj<HEIGHT;yj++) {
-      if (bitRead(num[4][xi],yj)==1) {
+      if (bitRead(numbig[4][xi],yj)==1) {
       drawPixelXY(1+xi, yj, 60, 255, 255);
       }
-      if (bitRead(num[4][xi],yj)==0) {
+      if (bitRead(numbig[4][xi],yj)==0) {
       drawPixelXY(1+xi, yj, 140, 180, 0);
       }
     }
@@ -75,10 +88,10 @@ void loop() {
 //2
    for (int xi=0; xi<5;xi++) {
     for (int yj=0; yj<HEIGHT;yj++) {
-      if (bitRead(num[5][xi],yj)==1) {
+      if (bitRead(numbig[5][xi],yj)==1) {
       drawPixelXY(7+xi, yj, 60, 255, 255);
       }
-      if (bitRead(num[5][xi],yj)==0) {
+      if (bitRead(numbig[5][xi],yj)==0) {
       drawPixelXY(7+xi, yj, 140, 180, 0);
       }
     }
@@ -86,10 +99,10 @@ void loop() {
 //:
    for (int xi=0; xi<1;xi++) {
     for (int yj=0; yj<HEIGHT;yj++) {
-      if (bitRead(num[10][xi],yj)==1) {
+      if (bitRead(numbig[10][xi],yj)==1) {
       drawPixelXY(13+xi, yj, 60, 255, 255);
       }
-      if (bitRead(num[10][xi],yj)==0) {
+      if (bitRead(numbig[10][xi],yj)==0) {
       drawPixelXY(13+xi, yj, 140, 180, 0);
       }
     }
@@ -97,10 +110,10 @@ void loop() {
 //3
    for (int xi=0; xi<5;xi++) {
     for (int yj=0; yj<HEIGHT;yj++) {
-      if (bitRead(num[8][xi],yj)==1) {
+      if (bitRead(numbig[8][xi],yj)==1) {
       drawPixelXY(15+xi, yj, 60, 255, 255);
       }
-      if (bitRead(num[8][xi],yj)==0) {
+      if (bitRead(numbig[8][xi],yj)==0) {
       drawPixelXY(15+xi, yj, 140, 180, 0);
       }
     }
@@ -108,10 +121,10 @@ void loop() {
 //4
    for (int xi=0; xi<5;xi++) {
     for (int yj=0; yj<HEIGHT;yj++) {
-      if (bitRead(num[9][xi],yj)==1) {
+      if (bitRead(numbig[9][xi],yj)==1) {
       drawPixelXY(21+xi, yj, 60, 255, 255);
       }
-      if (bitRead(num[9][xi],yj)==0) {
+      if (bitRead(numbig[9][xi],yj)==0) {
       drawPixelXY(21+xi, yj, 140, 180, 0);
       }
     }
