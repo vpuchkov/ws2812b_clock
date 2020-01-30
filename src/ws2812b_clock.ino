@@ -72,63 +72,37 @@ void setup() {
   FastLED.show();
 }
 
+#define BITMAP_HEIGHT 8
+void drawMcx8VertBitmap(uint8_t posX, uint8_t posY, uint8_t len, uint8_t data[], CRGB foreground, CRGB background) {
+  for (int xi = 0; xi < len; xi++) {
+    uint8_t bitmask = data[xi];
+    for (int yj = 0; yj < BITMAP_HEIGHT; yj++) {
+      drawPixelXY(posX + xi, posY + yj, (bitRead(bitmask,yj) ? foreground : background));
+    }
+  }
+}
+
+void drawSymbol(uint8_t posX, uint8_t symbol, CRGB foreground, CRGB background) {
+  // Тут 0 - это координата по X, а 5 - это ширина символа в шрифте
+  drawMcx8VertBitmap(posX, 0, 5, numbig[symbol], foreground, background);
+}
+
+void drawSymbol(uint8_t posX, uint8_t symbol, CRGB foreground) {
+  drawSymbol(posX, symbol, foreground, CRGB::Black);
+}
+
 void loop() {
 //1
-  for (int xi=0; xi<5;xi++) {
-    for (int yj=0; yj<HEIGHT;yj++) {
-      if (bitRead(numbig[4][xi],yj)==1) {
-      drawPixelXY(1+xi, yj, 60, 255, 255);
-      }
-      if (bitRead(numbig[4][xi],yj)==0) {
-      drawPixelXY(1+xi, yj, 140, 180, 0);
-      }
-    }
-    
-  }
+  drawSymbol(1, 4, CRGB(60, 255, 255), CRGB(140, 180, 0));
 //2
-   for (int xi=0; xi<5;xi++) {
-    for (int yj=0; yj<HEIGHT;yj++) {
-      if (bitRead(numbig[5][xi],yj)==1) {
-      drawPixelXY(7+xi, yj, 60, 255, 255);
-      }
-      if (bitRead(numbig[5][xi],yj)==0) {
-      drawPixelXY(7+xi, yj, 140, 180, 0);
-      }
-    }
-   }
+  drawSymbol(7, 5, CRGB(60, 255, 255));
 //:
-   for (int xi=0; xi<1;xi++) {
-    for (int yj=0; yj<HEIGHT;yj++) {
-      if (bitRead(numbig[10][xi],yj)==1) {
-      drawPixelXY(13+xi, yj, 60, 255, 255);
-      }
-      if (bitRead(numbig[10][xi],yj)==0) {
-      drawPixelXY(13+xi, yj, 140, 180, 0);
-      }
-    }
-  }
+  drawSymbol(13, 10, CRGB(60, 255, 255), CRGB(140, 180, 0));
 //3
-   for (int xi=0; xi<5;xi++) {
-    for (int yj=0; yj<HEIGHT;yj++) {
-      if (bitRead(numbig[8][xi],yj)==1) {
-      drawPixelXY(15+xi, yj, 60, 255, 255);
-      }
-      if (bitRead(numbig[8][xi],yj)==0) {
-      drawPixelXY(15+xi, yj, 140, 180, 0);
-      }
-    }
-  }
+  drawSymbol(15, 8, CRGB(60, 255, 255));
 //4
-   for (int xi=0; xi<5;xi++) {
-    for (int yj=0; yj<HEIGHT;yj++) {
-      if (bitRead(numbig[9][xi],yj)==1) {
-      drawPixelXY(21+xi, yj, 60, 255, 255);
-      }
-      if (bitRead(numbig[9][xi],yj)==0) {
-      drawPixelXY(21+xi, yj, 140, 180, 0);
-      }
-    }
-  }
+  drawSymbol(21, 9, CRGB(60, 255, 255), CRGB(140, 180, 0));
+
       FastLED.show();
       delay(200);
   
