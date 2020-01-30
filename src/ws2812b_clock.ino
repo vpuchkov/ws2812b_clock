@@ -25,7 +25,7 @@
 
 // ============ ДЛЯ РАЗРАБОТЧИКОВ ============
 // ПИНЫ
-#define LED_PIN 2
+#define LED_PIN 4
 
 // БИБЛИОТЕКИ
 #include <FastLED.h>
