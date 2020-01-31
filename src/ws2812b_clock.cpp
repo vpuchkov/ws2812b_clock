@@ -16,11 +16,19 @@ void setup() {
 
 void loop() {
 
-const uint8_t bitmap[1] = { B01001111 };
-drawMcx8VertBitmap(2, 0, sizeof(bitmap), bitmap, CRGB::Yellow, CRGB::DarkGray);
+//1
+  drawSymbol(1, 4, CRGB(60, 255, 255), CRGB(140, 180, 0));
+//2
+  drawSymbol(7, 5, CRGB(60, 255, 255));
+//:
+  drawSymbol(13, 10, CRGB(60, 255, 255), CRGB(140, 180, 0));
+//3
+  drawSymbol(15, 8, CRGB(60, 255, 255));
+//4
+  drawSymbol(21, 9, CRGB(60, 255, 255), CRGB(140, 180, 0));
 
-      FastLED.show();
-      delay(200);
+FastLED.show();
+delay(200);
   
   
 }
