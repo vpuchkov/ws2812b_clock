@@ -53,7 +53,7 @@ void drawPixelXY(int8_t x, int8_t y, CRGB color);
 
 uint16_t getPixelNumber(int8_t x, int8_t y);
 
-void drawMcx8VertBitmap(uint8_t posX, uint8_t posY, uint8_t len, uint8_t data[], CRGB foreground, CRGB background);
+void drawMcx8VertBitmap(uint8_t posX, uint8_t posY, uint8_t len, const uint8_t data[], CRGB foreground, CRGB background);
 
 void drawSymbol(uint8_t posX, uint8_t symbol, CRGB foreground, CRGB background);
 
