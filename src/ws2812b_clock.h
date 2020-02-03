@@ -5,6 +5,19 @@
 
 #include "config.h"
 
+//Работа с сетью
+#include <ESP8266WiFi.h>          //https://github.com/esp8266/Arduino
+
+//needed for library
+#include <DNSServer.h>
+#include <ESP8266WebServer.h>
+#include <WiFiManager.h>         //https://github.com/tzapu/WiFiManager
+#include <NTPClient.h>
+
+
+WiFiUDP ntpUDP;
+NTPClient timeClient(ntpUDP, "europe.pool.ntp.org", 10800, 600000);
+
 /*
   Скетч к проекту "Бегущая строка"
   Страница проекта (схемы, описания): https://alexgyver.ru/GyverString/
