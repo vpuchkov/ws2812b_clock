@@ -36,7 +36,7 @@ void loop() {
 
 timeClient.update();
 
-
+//
 
 FastLED.show();
 delay(100);
