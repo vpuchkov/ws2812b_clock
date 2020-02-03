@@ -21,22 +21,22 @@ void setup() {
 
 void loop() {
 
+timeClient.update();
+
 //1
-  drawSymbol(1, ( timeClient.getMinutes()  % 100 / 10 ), CRGB(60, 255, 255));
+  drawSymbol(1, ( timeClient.getMinutes()  % 100 / 10 ), CHSV(140, 130, 255));
 //2
-  drawSymbol(7, ( timeClient.getMinutes()  % 10 ), CRGB(60, 255, 255));
+  drawSymbol(7, ( timeClient.getMinutes()  % 10 ), CHSV(140, 130, 255));
 //:
   drawSymbol(13, 10, CRGB(60, 255, 255));
 //3
-  drawSymbol(15, ( timeClient.getSeconds() % 100 / 10 ), CRGB(60, 255, 255));
+  drawSymbol(15, ( timeClient.getSeconds() % 100 / 10 ), CHSV(140, 130, 255));
 //4
-  drawSymbol(21, ( timeClient.getSeconds() % 10 ), CRGB(60, 255, 255));
+  drawSymbol(21, ( timeClient.getSeconds() % 10 ), CHSV(140, 130, 255));
 
 FastLED.show();
 delay(100);
   
-  timeClient.update();
-
-  Serial.println(timeClient.getSeconds());
+//  Serial.println(timeClient.getSeconds());
   
 }
