@@ -14,7 +14,7 @@ void setup() {
 
   // настройка сети
   WiFiManager wifiManager;
-  wifiManager.autoConnect("ClockAutoConnectAP");
+  wifiManager.autoConnect("VoffkoClock");
   timeClient.begin();
 }
 
