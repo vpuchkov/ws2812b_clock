@@ -21,8 +21,8 @@ void setup() {
 
 void loop() {
 
-
-
+delay(100);
+timeClient.update();
 //1
   drawSymbol(1, ( timeClient.getHours()  % 100 / 10 ), CHSV(140, 130, 255));
 //2
@@ -34,13 +34,6 @@ void loop() {
 //4
   drawSymbol(21, ( timeClient.getMinutes() % 10 ), CHSV(140, 130, 255));
 
-timeClient.update();
-
-//
-
 FastLED.show();
-delay(100);
-  
-//  Serial.println(timeClient.getSeconds());
   
 }
